@@ -1,0 +1,16 @@
+import math
+n=10000001
+x=int(math.sqrt(n))
+sieve=[1]*n
+sieve[0]=0
+sieve[1]=0
+for i in range(2,x+1):
+        if sieve[i]==1:
+                for j in range(i*i,n,i):
+                        sieve[j]=0
+pf=[0]*n
+for i in range(2,n):#10
+        if sieve[i]==1:
+                pf[i]=pf[i-1]+1
+        else:
+                pf[i]=pf[i-1]
